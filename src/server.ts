@@ -1,11 +1,13 @@
 import express from 'express';
 import { json } from 'body-parser';
+import { cors } from 'cors';
 import userRouter from './routes/UsersMessgae';
 
 const app = express();
 const PORT = process.env.PORT || 8080;
 
 app.use(json());
+app.use(cors());
 
 app.use('/users', userRouter);
 
