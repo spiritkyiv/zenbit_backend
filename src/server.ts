@@ -4,7 +4,7 @@ import serverless from 'serverless-http';
 import userRouter from './routes/UsersMessgae';
 
 const app = express();
-const basicRout = (enpoint: string) => `/.netlify/functions/server${enpoint}`;
+const basicRout = (endpoint: string): string => `/.netlify/functions/server${endpoint}`;
 
 app.use(cors());
 
