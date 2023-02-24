@@ -2,7 +2,7 @@
   "name": "zenbit_backend",
   "version": "1.0.0",
   "description": "",
-  "main": "src/server.ts",
+  "main": "functions/server.js",
   "scripts": {
     "build": "netlify-lambda build src",
     "start": "nodemon src/server.ts"

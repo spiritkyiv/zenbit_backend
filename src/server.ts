@@ -3,15 +3,17 @@ import cors from 'cors';
 import serverless from 'serverless-http';
 import userRouter from './routes/UsersMessgae';
 
-const app = express();
-const basicRout = (endpoint: string): string => `/.netlify/functions/server${endpoint}`;
+const router = express.Router();
+export const app = express();
 
 app.use(cors());
 
-app.get(basicRout('/'), (req, res) => {
+router.get('/', (req, res) => {
   res.status(200).json("I'm work");
 });
 
-app.use(basicRout('/users'), userRouter);
+router.use('/users', userRouter);
+
+app.use('/.netlify/functions/server', router)
 
 export const handler = serverless(app);
